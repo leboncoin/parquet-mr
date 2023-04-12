@@ -399,11 +399,15 @@ public class MessageColumnIO extends GroupColumnIO {
       }
 
       ++currentLevel;
+      try {
       r[currentLevel] = r[currentLevel - 1];
-
       int fieldsCount = ((GroupColumnIO) currentColumnIO).getChildrenCount();
       fieldsWritten[currentLevel].reset(fieldsCount);
-      if (DEBUG) printState();
+      }catch(Exception e){
+        log("ERROR ON: " + group.toString());
+       printState();
+       throw new RuntimeException(e);
+      }
     }
 
     private boolean hasNullCache(GroupColumnIO group) {
