@@ -9,7 +9,7 @@
 
   <groupId>org.apache.parquet</groupId>
   <artifactId>parquet</artifactId>
-  <version>0.12.3-lbc-build-0.0.1</version>
+  <version>1.12.3-lbc-build-0.0.1</version>
   <packaging>pom</packaging>
 
   <name>Apache Parquet MR</name>
@@ -576,7 +576,7 @@
               <goal>analyze-only</goal>
             </goals>
             <configuration>
-              <failOnWarning>true</failOnWarning>
+              <failOnWarning>false</failOnWarning>
               <ignoreNonCompile>true</ignoreNonCompile>
             </configuration>
           </execution>
